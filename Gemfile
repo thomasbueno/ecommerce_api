@@ -20,8 +20,8 @@ gem 'rack-cors', '~> 1.1.1'
 gem 'cpf_cnpj', '~> 0.5.0'
 
 # Delayed Jobs
-gem "sidekiq", '~> 6.1.3'
-gem "sidekiq-scheduler", '~> 3.0.1'
+gem 'sidekiq', '~> 6.1.3'
+gem 'sidekiq-scheduler', '~> 3.0.1'
 
 # Rendering
 gem 'jbuilder', '~> 2.10.1'
@@ -30,18 +30,19 @@ gem 'jbuilder', '~> 2.10.1'
 gem 'httparty', '~> 0.18.1'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'pry', '~> 0.13.1'
   gem 'rspec-rails', '~> 4.0.1'
   gem 'shoulda-matchers', '~> 4.0'
 end
 
 group :development do
   gem 'listen', '~> 3.2'
+  gem 'rubocop', '~> 1.48', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rubocop', '~> 1.48', require: false
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
