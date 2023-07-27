@@ -15,8 +15,16 @@ module Admin
       def update
         @category = Category.find(params[:id])
         @category.attributes = category_params
-        
+
         save_category!
+      end
+
+      def destroy
+        @category = Category.find(params[:id])
+        @category.destroy!
+      
+      rescue
+        render_error(fields: @category.errors.messages)
       end
 
       private
